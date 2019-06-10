@@ -39,7 +39,7 @@
         .menuItem {
             height: 120px;
             width: 90%;
-            border-bottom: 3px solid #bbbbbb;
+            border-bottom: 2px dotted #bbbbbb;
             display: inline-block;
             text-align: left;
             font-size: 40px;
@@ -48,6 +48,24 @@
             color: whitesmoke;
             padding-top: 40px;
             box-sizing: border-box
+        }
+
+        .elev {
+            width: 100%;
+            height: 180px;
+            border-bottom: 2px dotted #bbbbbb;
+        }
+
+        .elev .avail {
+            display: inline-block;
+            border-radius: 20px;
+            width: 140px;
+            height: 140px;
+            margin: 20px;
+            line-height: 140px;
+            color: white;
+            text-align: center;
+            font-size: 30px;
         }
     </style>
 </head>
@@ -65,6 +83,10 @@
         <div class="menuItem">Service</div>
         <div class="menuItem" style="border:none; height: calc(100% - 485px);"></div>
         <div class="menuItem">Logout</div>
+    </div>
+    <div style="width: 100%; height: 100px;"></div>
+    <div class="elev">
+        <div class="avail" style="background-color: green">98.4%</div>
     </div>
 </body>
 

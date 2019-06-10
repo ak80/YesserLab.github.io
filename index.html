@@ -24,19 +24,21 @@
 
         #nav {
             position: fixed;
-            top: 100px;
+            top: 110px;
             left: 0;
-            width: 400px;
-            height: calc(100% - 100px);
-            background-color: #2c373b;
+            width: 70%;
+            height: calc(100% - 110px);
+            background-color: #32619B;
             border-right: 10px solid rgba(255, 255, 255, 0.40);
+            display: none;
         }
     </style>
 </head>
 
 <body>
     <div id="topBar" style="">
-        <img src="menu.svg" style="width: 50px; height: 50px; position: absolute; top: 25px; left: 25px;">
+        <img src="menu.svg" onclick="javascript:nav.style.display= nav.style.display ? null : 'block'"
+            style="width: 50px; height: 50px; position: absolute; top: 25px; left: 25px;">
         <img src="search.svg" style="width: 50px; height: 50px; position: absolute; top: 25px; right: 25px;">
         <span>Status</span>
     </div>

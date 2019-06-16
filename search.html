@@ -1,0 +1,220 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Elevision 4</title>
+
+    <style>
+        * {
+            font-family: Helvetica;
+        }
+
+        #topBar {
+            width: 100%;
+            height: 80px;
+            background-color: #2c373b;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-bottom: 10px solid rgba(255, 255, 255, 0.40);
+            text-align: center;
+            color: ghostwhite;
+            font-size: 50px;
+            box-sizing: content-box;
+            padding-top: 20px;
+        }
+
+        #nav {
+            position: fixed;
+            top: 110px;
+            left: 0;
+            width: 70%;
+            height: calc(100% - 110px);
+            background-color: #32619B;
+            border-right: 10px solid rgba(255, 255, 255, 0.40);
+            display: none;
+            text-align: center;
+        }
+
+        .menuItem {
+            height: 120px;
+            width: 90%;
+            border-bottom: 2px dotted #bbbbbb;
+            display: inline-block;
+            text-align: left;
+            font-size: 40px;
+            vertical-align: middle;
+            color: whitesmoke;
+            padding-top: 40px;
+            box-sizing: border-box
+        }
+
+        .elev {
+            width: 100%;
+            height: 180px;
+            border-bottom: 2px dotted #bbbbbb;
+        }
+
+        .elev div {
+            float: left;
+        }
+
+        .elev .avail {
+            border-radius: 70px;
+            width: 100px;
+            height: 100px;
+            margin: 40px 20px 40px 20px;
+            line-height: 108px;
+            color: white;
+            text-align: center;
+            font-size: 25px;
+        }
+        #sText
+        {
+            width: 100%;
+            height: 100px;
+            border-radius: 20px;
+            margin-top: 20px;
+            outline: none;
+            border: 2px solid gray;
+            font-size: 40px;
+            padding: 0 40px 0 40px;
+            box-sizing: border-box;
+            position: sticky;
+            position: -webkit-sticky;
+            top:130px;
+            filter: drop-shadow(0 0 4px #555555);
+        }
+    </style>
+    <script>
+    function search()
+    {
+        var Res = document.body.querySelectorAll('span[data-star]');
+        Res.forEach(function(el) { el.parentElement.parentElement.style.display = 'none'; });
+
+        if (sText.value != "")
+            Res.forEach(function(el) { if (el.textContent.toUpperCase().includes(sText.value.toUpperCase()))el.parentElement.parentElement.style.display = null;});
+    }
+    </script>
+</head>
+
+<body onload="javascript:sText.value='';search();sText.focus();">
+    <div id="topBar">
+        <img src="back.svg" onclick="javascript:document.location.href='index.html';"
+            style="width: 50px; height: 50px; position: absolute; top: 25px; left: 25px;" />
+        <span>Search</span>
+    </div>
+    <div style="width: 100%; height: 100px;"></div>
+    <input type="text" id="sText" oninput="search()" />
+
+
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: green">98.4%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">Gebäude 236_3573453b</span><br />
+            <span data-star style="font-size: 40px; color:gray;">Am Haag 10, 82166 Gräfelfing</span>
+        </div>
+    </div>
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: green">84.7%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">Personal Aufzug (Geb 35)</span><br />
+            <span data-star style="font-size: 40px; color:gray;">6 Old York St.Dundalk, MD 21222</span>
+        </div>
+    </div>
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: green">74.4%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">Nunn Aufzüge LTE Test</span><br />
+            <span data-star style="font-size: 40px; color:gray;">Bichlmairstraße 2, 82061 Neuried</span>
+        </div>
+    </div>
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: orange">23.4%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">FST - 653</span><br />
+            <span data-star style="font-size: 40px; color:gray;">Annette-Kolb-Anger Str. 3, 81737 München</span>
+        </div>
+    </div>
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: green">84.4%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">Hausaufzug</span><br />
+            <span data-star style="font-size: 40px; color:gray;">Lochhamer Schlag 8, 82166 Gräfelfing</span>
+        </div>
+    </div>
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: green">46.5%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">Schum S1 Test (LTE-NL)</span><br />
+            <span data-star style="font-size: 40px; color:gray;">2 West Atlantic St.</span>
+        </div>
+    </div>
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: crimson">63.5%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">Lastenaufzug 14B</span><br />
+            <span data-star style="font-size: 40px; color:gray;">314 St Louis Rd</span>
+        </div>
+    </div>
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: green">32.1%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">Gebäude 236_3573453b</span><br />
+            <span data-star style="font-size: 40px; color:gray;">9027 Rocky River Street</span>
+        </div>
+    </div>
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: green">78.3%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">Gebäude 236_3573453b</span><br />
+            <span data-star style="font-size: 40px; color:gray;">7991 Courtland St.</span>
+        </div>
+    </div>
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: green">94.7%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">Gebäude 5 P235</span><br />
+            <span data-star style="font-size: 40px; color:gray;">7070 Princeton Street </span>
+        </div>
+    </div>
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: crimson">57.3%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">FST T4-Personal</span><br />
+            <span data-star style="font-size: 40px; color:gray;">Grimselstrasse 19</span>
+        </div>
+    </div>
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: green">26.4%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">Noch was</span><br />
+            <span data-star style="font-size: 40px; color:gray;">Ruwerstrasse 16, 54427 Kell am See</span>
+        </div>
+    </div>
+    <div class="elev" onclick="javascript:document.location.href='details.html?aid=' + this.children[1].children[1].innerHTML;">
+        <div class="avail" style="background-color: orange">62.6%</div>
+        <div style="height: 100%; padding-top: 20px; box-sizing: border-box">
+            <br />
+            <span data-star style="font-size: 60px;">S1 Test Blah 35</span><br />
+            <span data-star style="font-size: 40px; color:gray;">Heimstettener Str. 2 a</span>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -77,7 +77,7 @@
 
         /* Create an active/current tablink class */
         .tab button.active {
-          border-bottom: 10px solid ghostwhite;
+          border-bottom: 5px solid ghostwhite;
         }
 
         /* Style the tab content */
@@ -86,7 +86,15 @@
           padding: 6px 12px;
           border: 1px solid #ccc;
           border-top: none;
+          animation: fadeEffect 1s; /* Fading effect takes 1 second */
         }
+        
+        /* Go from zero to full opacity */
+        @keyframes fadeEffect {
+          from {opacity: 0;}
+          to {opacity: 1;}
+        }
+
     </style>
 
     <script>
@@ -110,11 +118,10 @@
           document.getElementById(cityName).style.display = "block";
           evt.currentTarget.className += " active";
         } 
-
     </script>
 </head>
 
-<body onload="javascript:ptitle.innerHTML = new URL(document.location.href).searchParams.get('aid') || 'Details';">
+<body onload="javascript:ptitle.innerHTML = new URL(document.location.href).searchParams.get('aid') || 'Details'; defOpen.click()">
     <div id="topBar">
         <img src="menu.svg" onclick="javascript:nav.style.display= nav.style.display ? null : 'block'"
             style="width: 50px; height: 50px; position: absolute; top: 25px; left: 25px;" />
@@ -133,12 +140,12 @@
     
      <!-- Tab links -->
     <div class="tab">
-      <button class="tablinks" onclick="openCity(event, 'eventLog')">Event Log</button>
+      <button id="defOpen" class="tablinks" onclick="openCity(event, 'eventLog')">Event Log</button>
       <button class="tablinks" onclick="openCity(event, 'live')">Live</button>
-      <button class="tablinks" onclick="openCity(event, 'liftAttendant')">Lift Attendant</button>
+      <button class="tablinks" onclick="openCity(event, 'liftAttendant')">Attendant</button>
       <button class="tablinks" onclick="openCity(event, 'log')">Log</button>
       <button class="tablinks" onclick="openCity(event, 'connection')">Connection</button>
-      <button class="tablinks" onclick="openCity(event, 'techDetails')">Technical Details</button>
+      <button class="tablinks" onclick="openCity(event, 'techDetails')">Details</button>
     </div>
 
     <!-- Tab content -->

@@ -98,7 +98,9 @@
 
         table { font-size: 32px; width: 100%; }
         tr { height: 80px; }
-        #eventList td, #eventDetail td[colspan] {border-bottom: 2px solid #cacaca;}
+        #eventList td, #eventDetail td[colspan],
+        #liveInfo td[colspan]
+         {border-bottom: 2px solid #cacaca;}
 
     </style>
 
@@ -147,7 +149,6 @@
     <div class="tab">
       <button id="defOpen" class="tablinks" onclick="openCity(event, 'eventLog')">Event Log</button>
       <button class="tablinks" onclick="openCity(event, 'live')">Live</button>
-      <button class="tablinks" onclick="openCity(event, 'liftAttendant')">Attendant</button>
       <button class="tablinks" onclick="openCity(event, 'log')">Log</button>
       <button class="tablinks" onclick="openCity(event, 'connection')">Connection</button>
       <button class="tablinks" onclick="openCity(event, 'techDetails')">Details</button>
@@ -237,13 +238,43 @@
     </div>
 
     <div id="live" class="tabcontent">
-      <h3>Paris</h3>
-      <p>Paris is the capital of France.</p>
-    </div>
+        <div style="text-align:center;"><img src="elev.svg" style="width:60%; height: auto;" /><br />
+          <div style="display: inline-block">
+        <div style="display: table-cell; text-align: center; vertical-align: middle; width:120px; border-radius: 50px; background-color: #2a7fff; padding: 5px; color: ghostwhite; height: 40px;"
+        onclick="">
+        Call
+      </div>
+        </div>
+      </div>
 
-    <div id="liftAttendant" class="tabcontent">
-      <h3>Tokyo</h3>
-      <p>Tokyo is the capital of Japan.</p>
+        <table id="liveInfo">
+            <tr><td colspan="2"><b>General</b></td></tr>
+            <tr><td>Name</td><td>E158 (Demo)</td></tr>
+            <tr><td>Gateway</td><td>EPAM2 / 07025830F8010100</td></tr>
+            <tr><td>FST</td><td>FST_B</td></tr>
+            <tr><td>Neuron ID</td><td>07025830F801</td></tr>
+            <tr><td>Order-ID</td><td>RC12/2005</td></tr>
+            <tr><td>Lift-ID Name</td><td>64-etage-simulator</td></tr>
+
+            <tr><td colspan="2"><b>Positioning</b></td></tr>
+            <tr><td>Velocity</td><td></td></tr>
+            <tr><td>Floor</td><td>4</td></tr>
+            <tr><td>Releveling down</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: lightgray"></div></td></tr>
+            <tr><td>Releveling up</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: lightgray"></div></td></tr>
+            <tr><td>Zone enabled</td><td><img style="width: 32px; height: auto; margin-right: 20px;" src="tick.svg" /></td></tr>
+            <tr><td>In ione</td><td><img style="width: 32px; height: auto; margin-right: 20px;" src="tick.svg" /></td></tr>
+            <tr><td>Level</td><td><img style="width: 32px; height: auto; margin-right: 20px;" src="tick.svg" /></td></tr>
+            <tr><td>Level reference</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: lightgray"></div></td></tr>
+            <tr><td>Loading sensor</td><td>4</td></tr>
+            <tr><td>Paring</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: lightgray"></div></td></tr>
+            <tr><td>Lights</td><td><img style="width: 32px; height: auto; margin-right: 20px;" src="tick.svg" /></td></tr>
+            <tr><td>Load in kg</td><td>0</td></tr>
+            <tr><td>Position in mm</td><td>10727</td></tr>
+            <tr><td>Umgehung status</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: lightgray"></div></td></tr>
+            <tr><td>Return</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: lightgray"></div></td></tr>
+            <tr><td>Emergency stop cabin</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: lightgray"></div></td></tr>
+            <tr><td>Emergency light</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: lightgray"></div></td></tr>
+          </table>
     </div>
 
     <div id="log" class="tabcontent">

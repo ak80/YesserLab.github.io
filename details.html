@@ -96,8 +96,9 @@
           to {opacity: 1;}
         }
 
+        table { font-size: 32px; width: 100%; }
         tr { height: 80px; }
-        td {border-bottom: 2px solid #cacaca;}
+        #eventList td, #eventDetail td[colspan] {border-bottom: 2px solid #cacaca;}
 
     </style>
 
@@ -155,38 +156,79 @@
     <!-- Tab content -->
     <div id="eventLog" class="tabcontent" style=>
       <div style="text-align:center;"><img src="elev.svg" style="width:60%; height: auto;" /></div>
-      <table style="font-size: 32px; width: 100%;">
-        <tr><td>Date</td><td colspan="2">Event</td><td>Floor</td></tr>
-        <tr><td>17.06.19 05:00</td><td>5/16 - System/Scheduled snapshot</td>
+      <table id="eventList">
+        <tr style="font-weight: bold"><td>Date</td><td colspan="2">Event</td><td>Floor</td></tr>
+
+        <tr onclick="javascript:eventList.style.display = 'none';eventDetail.style.display = null;">
+          <td>17.06.19 05:00</td><td>5/16 - System/Scheduled snapshot</td>
           <td><img style="width: 32px; height: auto; margin-right: 20px;" src="tick.svg" /></td><td>K</td>
         </tr>
-        <tr><td>16.06.19 05:00</td><td>5/16 - System/Scheduled snapshot</td>
+        <tr onclick="javascript:eventList.style.display = 'none';eventDetail.style.display = null;">
+          <td>16.06.19 05:00</td><td>5/16 - System/Scheduled snapshot</td>
           <td><img style="width: 32px; height: auto; margin-right: 20px;" src="tick.svg" /></td><td>K</td>
         </tr>
-        <tr><td>15.06.19 05:00</td><td>5/16 - System/Scheduled snapshot</td>
+        <tr onclick="javascript:eventList.style.display = 'none';eventDetail.style.display = null;">
+          <td>15.06.19 05:00</td><td>5/16 - System/Scheduled snapshot</td>
           <td><img style="width: 32px; height: auto; margin-right: 20px;" src="tick.svg" /></td><td>K</td>
         </tr>
-        <tr><td>14.06.19 11:51</td><td>5/1 - System/Controller status</td>
+        <tr onclick="javascript:eventList.style.display = 'none';eventDetail.style.display = null;">
+          <td>14.06.19 11:51</td><td>5/1 - System/Controller status</td>
           <td><img style="width: 32px; height: auto; margin-right: 20px;" src="warning.svg" /></td><td>K</td>
         </tr>
-        <tr><td>14.06.19 11:16</td><td>3/4 - Positioning/Flush positioning</td>
+        <tr onclick="javascript:eventList.style.display = 'none';eventDetail.style.display = null;">
+          <td>14.06.19 11:16</td><td>3/4 - Positioning/Flush positioning</td>
           <td><img style="width: 32px; height: auto; margin-right: 20px;" src="warning.svg" /></td><td>E</td>
         </tr>
-        <tr><td>14.06.19 11:16</td><td>3/1 - Positioning/Zone</td>
+        <tr onclick="javascript:eventList.style.display = 'none';eventDetail.style.display = null;">
+          <td>14.06.19 11:16</td><td>3/1 - Positioning/Zone</td>
           <td><img style="width: 32px; height: auto; margin-right: 20px;" src="warning.svg" /></td><td>E</td>
         </tr>
-        <tr><td>14.06.19 11:16</td><td>5/1 - System/Controller status</td>
+        <tr onclick="javascript:eventList.style.display = 'none';eventDetail.style.display = null;">
+          <td>14.06.19 11:16</td><td>5/1 - System/Controller status</td>
           <td><img style="width: 32px; height: auto; margin-right: 20px;" src="warning.svg" /></td><td>K</td>
         </tr>
-        <tr><td>14.06.19 08:05</td><td>5/13 - System/Auxiliary</td>
+        <tr onclick="javascript:eventList.style.display = 'none';eventDetail.style.display = null;">
+          <td>14.06.19 08:05</td><td>5/13 - System/Auxiliary</td>
           <td><img style="width: 32px; height: auto; margin-right: 20px;" src="warning.svg" /></td><td>K</td>
         </tr>
-        <tr><td>23.05.19 09:18</td><td>5/9 - System/Reset events</td>
+        <tr onclick="javascript:eventList.style.display = 'none';eventDetail.style.display = null;">
+          <td>23.05.19 09:18</td><td>5/9 - System/Reset events</td>
           <td><img style="width: 32px; height: auto; margin-right: 20px;" src="warning.svg" /></td><td>-1</td>
         </tr>
-        <tr><td>17.06.19 05:00</td><td>5/16 - System/Scheduled snapshot</td>
+        <tr onclick="javascript:eventList.style.display = 'none';eventDetail.style.display = null;">
+          <td>17.06.19 05:00</td><td>5/16 - System/Scheduled snapshot</td>
           <td><img style="width: 32px; height: auto; margin-right: 20px;" src="tick.svg" /></td><td>3</td>
         </tr>
+      </table>
+
+      <table id="eventDetail" style="display: none">
+        <tr><td colspan="2"><b>Error information</b></td></tr>
+        <tr><td>Time</td><td>17.06.2019 05:00:01.9440</td></tr>
+        <tr><td>Endtime</td><td></td></tr>
+        <tr><td>Inserttime</td><td>17.06.2019 05:00:11.8040</td></tr>
+        <tr><td>Code</td><td>5/16 - System/Scheduled snapshot</td></tr>
+        <tr><td>Availability</td><td>Normal</td></tr>
+        <tr><td>Floor</td><td>3</td></tr>
+        <tr><td>System State</td><td>Normal</td></tr>
+
+        <tr><td colspan="2"><b>Cabin</b></td></tr>
+        <tr><td>Velocity</td><td></td></tr>
+        <tr onclick=""><td>Floor</td><td>4</td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: gray"></div></tr>
+        <tr><td>Releveling down</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: gray"></div></td></tr>
+        <tr><td>Releveling up</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: gray"></div></td></tr>
+        <tr><td>Zone enabled</td><td><img style="width: 32px; height: auto; margin-right: 20px;" src="tick.svg" /></td></tr>
+        <tr><td>In ione</td><td><img style="width: 32px; height: auto; margin-right: 20px;" src="tick.svg" /></td></tr>
+        <tr><td>Level</td><td><img style="width: 32px; height: auto; margin-right: 20px;" src="tick.svg" /></td></tr>
+        <tr><td>Level reference</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: gray"></div></td></tr>
+        <tr><td>Loading sensor</td><td>4</td></tr>
+        <tr><td>Paring</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: gray"></div></td></tr>
+        <tr><td>Lights</td><td><img style="width: 32px; height: auto; margin-right: 20px;" src="tick.svg" /></td></tr>
+        <tr><td>Load in kg</td><td>0</td></tr>
+        <tr><td>Position in mm</td><td>10727</td></tr>
+        <tr><td>Umgehung status</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: gray"></div></td></tr>
+        <tr><td>Return</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: gray"></div></td></tr>
+        <tr><td>Emergency stop cabin</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: gray"></div></td></tr>
+        <tr><td>Emergency light</td><td><div style="border-radius: 5px; height: 30px; width: 30px; background-color: gray"></div></td></tr>
       </table>
     </div>
 
